@@ -1,0 +1,64 @@
+.header{
+	height: $header-height;
+	@include breakpoint(small down){
+			height: 100vh;
+	}
+	position: relative;
+	z-index: 1;
+	&__container{
+		@include flex-grid-row();
+		justify-content: flex-end;
+		align-items: center;
+		padding-top: rem-calc(70);
+		padding-bottom: rem-calc(70);
+		@include breakpoint(large down){
+			justify-content: center;
+
+		}
+	}
+	&__nav{
+		@include flex-grid-column(10, rem-calc(15));
+		@include breakpoint(large down){
+			@include flex-grid-column(16, rem-calc(15));
+			position: relative;
+		}
+		&-list{
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: flex-end;
+			@include breakpoint(large down){
+				justify-content: center;
+			}
+			@include breakpoint(small down){
+				padding-top: rem-calc(70);
+				background: linear-gradient(to left, transparent, #ffffff,#ffffff,#ffffff,#ffffff, transparent);
+				
+				flex-direction: column;
+		    justify-content: stretch;
+		    align-items: center;
+			}
+			&-item{
+				margin-bottom: 20px;
+				&:nth-child(n+2){
+					margin-left: 2em;
+					@include breakpoint(small down){
+						margin-left: 0;
+					}
+				}
+			}
+			&-link{
+				@extend .hovered-btn;
+				@include font(400, 18);
+				text-transform: capitalize;
+				padding: .5em .7em;
+				&--active{
+					@extend .hovered-btn:hover;
+					cursor: default;
+				}
+			}
+			&-text{
+				//link text
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+// slick pref
+$slick-font-path: "../fonts/" !default; // path to fonts
+$slick-loader-path: "../img/" !default; // path to gif loader
+
+@import '../../components/slick-carousel/slick/slick.scss';
+@import '../../components/slick-carousel/slick/slick-theme.scss';

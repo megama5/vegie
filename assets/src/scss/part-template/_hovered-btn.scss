@@ -1,0 +1,39 @@
+.hovered-btn{
+	position: relative;
+	&::before{
+		position: absolute;
+		content: '';
+		top: rem-calc(-10);
+		left: 0;
+		width: 0;
+		height: 0;
+		border-top: rem-calc(1) solid transparent;
+		border-left: rem-calc(1) solid transparent;
+		transition: height 1s ease, width .3s ease, top .3s ease, border-color .3s ease;
+	}
+	&::after{
+		position: absolute;
+		content: '';
+		bottom: rem-calc(-10);
+		right: 0;
+		width: 0;
+		height: 0;
+		border-bottom: rem-calc(1) solid transparent;
+		border-right: rem-calc(1) solid transparent;
+		transition: height .7s ease, width .3s ease, bottom .3s ease, border-color .3s ease;
+	}
+	&:hover{
+		&::before{
+			height: 100%;
+			width: 100%;
+			border-color: $main-color;
+			top: 0;
+		}
+		&::after{
+			height: 100%;
+			width: 100%;
+			border-color: $main-color;
+			bottom: 0;
+		}
+	}
+}

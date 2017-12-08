@@ -1,0 +1,58 @@
+.slide{
+	background-image: url("../img/header-bg-1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	z-index: 1;
+	@include breakpoint(large down){
+		&::after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $white;
+			opacity: .8;
+			z-index: -1;
+		}
+	} 
+	&__container{
+		@include flex-grid-row();
+		height: $header-height;
+		justify-content: flex-end;
+		align-items: center;
+		// padding-top: rem-calc(165);
+		@include breakpoint(large down){
+			justify-content: center;
+		}
+		@include breakpoint(small down){
+			height: 100vh;
+		}
+
+	}
+	&__title{
+		@include flex-grid-column(6);		
+		@include breakpoint(large down){
+			@include flex-grid-column(16, rem-calc(15));
+			max-width: rem-calc(600);
+		}
+		&-text{
+			@include font(300, 40){
+				line-height: 1.38em;
+				text-align: center;
+				padding: 0 rem-calc(15);
+				letter-spacing: -0.74px;
+			}
+			&::after{
+				display: block;
+				content: url('../img/decoration-1.png');
+				padding-top: rem-calc(20);
+				transition: padding .3s ease;
+				@include breakpoint(small down){
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}

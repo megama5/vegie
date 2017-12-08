@@ -1,0 +1,63 @@
+$humburger-color: #000;
+.hamburger{
+	$this: &;
+	width: rem-calc(30);
+	height: rem-calc(30);
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	cursor: pointer;
+	flex-wrap: wrap;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	padding: rem-calc(5);
+	box-sizing: content-box;
+	&:focus{
+		outline: none;
+	}
+	&__l1,&__l2,&__l3{
+		transition: 
+			transform .3s ease,
+			opacity .9s ease,
+			width .3s ease,
+			border-color .3s ease,
+			margin .3s ease;
+		display: inline-block;
+		width: 100%;
+		border: rem-calc(1) solid $humburger-color;
+	}
+	&__l1,&__l2{
+		margin-bottom: rem-calc(10);
+	}
+	@include hover(){
+		& span{
+			border-color: lighten($humburger-color, 50%);	
+		}
+	}
+	&--active{
+		& #{$this}__l1,& #{$this}__l2,& #{$this}__l3{
+			position: absolute;
+	    top: 50%;
+	    left: 0;
+	    right: 0;
+	    margin: 0 auto ;
+	    max-width: initial;
+	    z-index: 10;
+		}
+		& #{$this}__l1{
+	    transform: rotate(45deg);
+		}
+		& #{$this}__l2{
+			opacity: 0;
+			width: 0;
+		}
+		& #{$this}__l3{
+	    transform: rotate(-45deg);
+		}
+	}
+}

@@ -1,0 +1,49 @@
+.social{
+ 	
+ 	&__container{
+ 		@include flex-grid-row();
+ 		justify-content: flex-end;
+ 		padding: rem-calc(30) rem-calc(15);
+ 		position: relative;
+ 		@include breakpoint(medium down){
+ 			flex-direction: column-reverse;
+ 			justify-content: center;
+ 			align-items: center;
+ 		}
+ 	}
+ 	&__copyright{
+		@include font(400,18);
+		@include breakpoint(large up){
+			position: absolute;
+			top: calc( 50% - #{rem-calc(18/2)} );
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+ 	}
+ 	&__list{
+ 		@include flex-grid-row(nest);
+ 		justify-content: space-beteen;
+ 		margin-bottom: rem-calc(30);
+ 		&-item{
+ 			& + &{
+ 				margin-left: rem-calc(14);
+ 			}
+ 			&-link{
+ 				display: inline-block;
+ 				padding: rem-calc(14) rem-calc(20);
+ 				border: 1px solid $main-color;
+ 				& svg path{
+ 					transition: fill .3s ease;
+ 				}
+ 				@include hover-btn(){
+ 					& svg path{
+ 						fill: $white;
+ 					}
+ 				}
+ 			}
+ 		}
+ 	}
+}

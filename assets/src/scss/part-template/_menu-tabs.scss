@@ -1,0 +1,34 @@
+.menu-tabs{
+	// padding: 0 rem-calc(40);
+	&__item{
+		@include flex-grid-row(nest);
+		flex-direction:column;
+		margin-bottom: rem-calc(42);
+		&-text{
+			@include flex-grid-row(nest);
+    	justify-content: space-between;
+    	background-image: radial-gradient($dark-gray rem-calc(1), $white 0);
+	    background-size: .5rem .5rem;
+	    background-repeat: repeat-x;
+	    background-position: 0% 78.3%;
+			&-name{
+				@include font(300,18);
+				text-transform: uppercase;
+				letter-spacing: 0.018em;
+				background-color: $white;
+
+			}
+			&-prize{
+				@include font(300,18);
+				letter-spacing: 0.018em;
+				background-color: $white;
+			}
+		}
+		&-info{
+			@include font(400, 14);
+			font-style: italic;
+			letter-spacing: 0.019em;
+		}
+	}
+
+}

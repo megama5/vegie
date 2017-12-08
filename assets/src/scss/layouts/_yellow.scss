@@ -1,0 +1,14 @@
+.yellow{
+	background: url("../img/yellow-bg.png");
+	&__list{
+		@include flex-grid-row();
+		justify-content: space-between;
+		&-item{
+			@include flex-grid-column(4, rem-calc(15));
+			
+			@include breakpoint(small down){
+				@include flex-grid-column(16, rem-calc(15));
+			}
+		}
+	}
+}

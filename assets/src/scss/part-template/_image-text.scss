@@ -1,0 +1,61 @@
+.image-text{
+	@include flex-grid-row();
+	background-color: $dark-gray;
+	transition: background-color .5s;
+	$this:&;
+	&:hover{
+		background-color: $dark-yellow;
+		& #{$this}__img{
+			opacity: .7;
+		}
+	}
+	&--reverse{
+		flex-direction: row-reverse;
+	}
+	&__col{
+		max-width: 50%;
+		width: 100%;
+		&--text{
+			display: flex;
+			flex-flow: column wrap;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			padding: rem-calc(15);
+			
+		}
+	}
+	&__img{
+		width: 100%;
+		transition: opacity .5s;
+	}
+	&__title{
+		@include font(700,18){
+			line-height: 1.68em;
+			letter-spacing: rem-calc(.36);
+		}
+		position: relative;
+		padding-bottom: rem-calc(18);
+		margin-bottom: rem-calc(18);
+		&::after{
+			position: absolute;
+			content: '';
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: rem-calc(88);
+			height: 1px;
+			background-color: $main-color;
+		}
+	}
+	&__text{
+		@include font(300, 16);
+	  letter-spacing: rem-calc(.32);
+	  margin-bottom: rem-calc(16);
+	}
+	&__prize{
+		@include font(700,18);
+		letter-spacing: rem-calc(.36);
+	}
+}

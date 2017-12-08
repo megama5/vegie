@@ -1,0 +1,24 @@
+.icon-text{
+	display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: rem-calc(65) 0;
+  &__img{
+  	margin-bottom: rem-calc(38);
+  }
+  &__title{
+  	margin-bottom: rem-calc(30);
+  	@include font(700, 18){
+  		line-height: 1.7em;
+  	}
+  	text-transform: uppercase;
+		letter-spacing: .02em;
+  }
+  &__text{
+  	text-align: center;
+  	@include font(300,16);
+  	letter-spacing: .02em;
+  	margin-bottom: rem-calc(20);
+  }
+}

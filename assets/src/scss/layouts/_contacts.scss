@@ -1,0 +1,64 @@
+.contacts{
+	background: url("../img/footer-bg.jpg") no-repeat;
+	background-size: cover;
+	padding-top: rem-calc(70);
+	position: relative;
+	z-index: 1;
+	&::after{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $white;
+			opacity: .2;
+			z-index: -1;
+		}
+
+	@include breakpoint(medium down){
+
+	
+		&::after{
+			opacity: .8;
+			z-index: -1;
+		}
+	}
+	&__container{
+		@include flex-grid-row();
+		justify-content: flex-end;
+		padding-bottom: rem-calc(30);
+	}
+	&__data-block{
+		@include flex-grid-column(8, 15);
+		@include breakpoint(medium down){
+			@include flex-grid-column(16, 15);
+		}
+	}
+	&__title{
+		@extend .slide__title-text;
+		margin-bottom: rem-calc(62);
+	}
+	&__info{
+		@include flex-grid-row(nest);
+		justify-content: space-between;
+		margin-bottom: rem-calc(100);
+		&-wrap{
+
+		}
+
+	}
+	&__subtitle{
+		@include font(400, 18){
+			text-transform: uppercase;
+		}
+		padding-bottom: 1rem;
+		&-text{
+			@include font(400,16);
+			max-width: rem-calc(300);
+			&-link{
+				@include font(400,16);
+			}
+		}
+	}
+}

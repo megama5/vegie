@@ -1,0 +1,34 @@
+.preview{
+	padding-top: rem-calc(80);
+	padding-bottom: rem-calc(100);
+	&__container{
+		@include flex-grid-row();
+	}
+	&__title{
+		width:100%;
+		@include flex-grid-row();
+		justify-content: center;
+		margin-bottom: rem-calc(57);
+		&-text{
+			@extend .slide__title-text;
+			@include flex-grid-column(6, rem-calc(15));
+			@include breakpoint(large down){
+				@include flex-grid-column(12, rem-calc(15));
+			}
+		}
+	}
+	&__list{
+		@include flex-grid-row();
+		padding: 0 rem-calc(15);
+		&-item{
+			width: 100%;
+			max-width: 33.33%;
+			@include breakpoint(large down){
+				max-width: 50%;
+			}
+			@include breakpoint(medium down){
+				max-width: 100%;
+			}
+		}
+	}
+}
