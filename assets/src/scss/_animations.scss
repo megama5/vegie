@@ -19,3 +19,43 @@
 		opacity: 1;
 	}
 }
+
+@keyframes loader {
+    0%,10%,100% {
+        width: 80px;
+        height: 80px
+    }
+
+    65% {
+        width: 150px;
+        height: 150px
+    }
+}
+
+@keyframes loaderBlock {
+    0%,30% {
+        transform: rotate(0)
+    }
+
+    55% {
+        background-color: #FFF
+    }
+
+    100% {
+        transform: rotate(90deg)
+    }
+}
+
+@keyframes loaderBlockInverse {
+    0%,20% {
+        transform: rotate(0)
+    }
+
+    55% {
+        background-color: #FFF
+    }
+
+    100% {
+        transform: rotate(-90deg)
+    }
+}

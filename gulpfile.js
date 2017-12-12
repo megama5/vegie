@@ -40,9 +40,10 @@ gulp.task('javascript', function (cb) {
                 'assets/components/jquery/dist/jquery.min.js',
                 'assets/components/foundation-sites/dist/js/foundation.js',
                 'assets/components/slick-carousel/slick/slick.min.js',
+                'assets/src/javascript/utils.js',
                 'assets/src/javascript/scripts.js'])
             .pipe(concat('global.js')),
-            uglify(),
+            // uglify(),
             gulp.dest('assets/dist/javascript')
         ],
         cb
@@ -59,5 +60,5 @@ gulp.task('browser-sync', function () {
 
 gulp.task('default', ['sass', 'javascript'], function () {
     gulp.watch('./assets/src/scss/**/*.scss', ['sass']);
-    gulp.watch('./assets/src/javascript/scripts.js', ['javascript']);
+    gulp.watch('./assets/src/javascript/**/*.js', ['javascript']);
 });

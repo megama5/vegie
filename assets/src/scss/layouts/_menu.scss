@@ -57,7 +57,7 @@
 				@include flex-grid-column(8, rem-calc(15));
 				max-width: rem-calc(600);
 				@include breakpoint(medium down){
-					@include flex-grid-column(16, rem-calc(15));
+					@include flex-grid-column(16, rem-calc(55));
 					max-width: rem-calc(900);
 					width: 100%;
 					justify-content: center;

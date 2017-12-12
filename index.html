@@ -21,27 +21,27 @@
 						</div>
 						<ul class="header__nav-list" id="header__nav-list">
 							<li class="header__nav-list-item">
-									<a href="" class="header__nav-list-link header__nav-list-link--active">
+									<a href="#" class="header__nav-list-link header__nav-list-link--active">
 										<span class="header__nav-list-text">home</span>
 									</a>
 							</li>
 							<li class="header__nav-list-item">
-									<a href="" class="header__nav-list-link">
+									<a href="#preview" class="header__nav-list-link">
 										<span class="header__nav-list-text">specials</span>
 									</a>
 							</li>
 							<li class="header__nav-list-item">
-									<a href="" class="header__nav-list-link">
+									<a href="#about" class="header__nav-list-link">
 										<span class="header__nav-list-text">about</span>
 									</a>
 							</li>
 							<li class="header__nav-list-item">
-									<a href="" class="header__nav-list-link">
+									<a href="#menu" class="header__nav-list-link">
 										<span class="header__nav-list-text">menu</span>
 									</a>
 							</li>
 							<li class="header__nav-list-item">
-									<a href="" class="header__nav-list-link">
+									<a href="#contacts" class="header__nav-list-link">
 										<span class="header__nav-list-text">contact</span>
 									</a>
 							</li>
@@ -142,7 +142,7 @@
 			</section>
 			<!-- /.yellow -->
 
-			<section class="preview">
+			<section class="preview" id="preview">
 				<div class="preview__container">
 					<div class="preview__title">
 						<h2 class="preview__title-text">This month specials</h2>
@@ -265,7 +265,7 @@
 			</section>
 			<!-- /.preview -->
 
-			<section class="about">
+			<section class="about" id="about">
 				<div class="about__container">
 					<div class="about__col">
 						<h3 class="about__title">About us</h3>
@@ -283,7 +283,7 @@
 			</section>
 			<!-- /.about -->
 
-			<section class="menu">
+			<section class="menu" id="menu">
 				<div class="menu__container">
 					<div class="menu__title">
 						<h2 class="menu__title-text">
@@ -750,7 +750,7 @@
 			<!-- /.menu -->
 		</main>
 
-		<footer class="contacts social">
+		<footer class="contacts social" id="contacts">
 			<div class="contacts__container">
 				<div class="contacts__data-block">
 					<h3 class="contacts__title">
@@ -845,7 +845,21 @@
 			</div>
 		</footer>
 		<!-- /.contacts .social -->
-										
+		<div id="preloader" class="preloader">
+        <div class="preloader__loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
 		<script src="assets/dist/javascript/global.js"></script>
+		<script>
+			(function($){
+        $(window).on('load', function() {
+            $("#preloader").delay( 2000 ).fadeOut();
+        });
+			})(jQuery);
+    </script>
 	</body>
 </html>
