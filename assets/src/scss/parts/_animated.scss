@@ -1,0 +1,13 @@
+.animated{
+	opacity: 0;
+	&__top{
+		&--finished{
+			animation: .7s show-slide-to-top .1s forwards; 
+		}
+	}
+	&__bottom{
+		&--finished{
+			animation: .7s show-slide-to-bottom .1s backwards; 
+		}
+	}
+}
